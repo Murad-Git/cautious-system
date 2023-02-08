@@ -1,16 +1,20 @@
 import { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
 
-import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-import '@/styles/colors.css';
+import '@/styles/globals.scss';
 
-/**
- * !STARTERCONF info
- * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
- */
+import { Layout } from '@/components/ui/Layout';
+
+import { store } from '@/store/store';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
+  );
 }
 
 export default MyApp;
