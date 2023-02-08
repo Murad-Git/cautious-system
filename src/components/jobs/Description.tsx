@@ -22,12 +22,15 @@ export const Description = ({
           {!!newJob && <Tag newJob={newJob} />}
         </div>
       </div>
-      <Link href='/'>
+      <Link
+        target='_blank'
+        href={`https://www.google.com/search?q=${position}`}
+      >
         <h2 className='text-primary text-lg font-bold mb-2 hover:text-neutral-very-dark text-start'>
           {position}
         </h2>
       </Link>
-      <ul className='flex items-center space-x-4 text-neutral-dark font-bold'>
+      <ul className='flex items-center space-x-1 md:space-x-4 text-neutral-dark font-bold'>
         <li>{postedAt}</li>
         <li>&#x2022;</li>
         <li>{contract}</li>

@@ -5,10 +5,10 @@
 
 @layer utilities {
   .container {
-    @apply mx-auto w-[375px] md:w-[1440px] text-center relative;
+    @apply mx-auto w-[375px] md:w-[1440px] text-center relative drop-shadow-lg shadow-primary;
   }
   .job-container{
-    @apply py-8 px-12 rounded-lg hover:border-l-primary hover:border-l-8 overflow-hidden flex items-center justify-between bg-white;
+    @apply py-6 md:py-8 px-3 md:px-12 rounded-lg hover:border-l-primary hover:border-l-8 overflow-hidden flex flex-col md:flex-row items-center justify-between bg-white ;
   }
   .btn-primary{
     @apply bg-neutral-filter-table px-1 py-1 rounded hover:bg-primary text-primary text-sm font-bold hover:text-neutral-filter-table cursor-pointer duration-150
@@ -21,8 +21,7 @@
     }
   }
   .filter{
-    @extend .job-container;
-    @apply absolute w-[375px] md:w-[750px] lg:w-[930px] xl:w-[1440px] top-[8rem] left-[7%] md:left-[12%] h-16 hover:border-none;
+    @apply flex items-center justify-between py-6 md:py-8 px-3 md:px-12 rounded-lg absolute w-[375px] md:w-[769px] lg:w-[1024px] xl:w-[1275px] 2xl:w-[1440px] top-[8rem] h-16 hover:border-none bg-white;
   }
 }
 

@@ -6,7 +6,7 @@ import { Children } from '@/types/main';
 
 export const Layout = ({ children }: Children) => {
   return (
-    <div className='bg-neutral-bg h-full'>
+    <div className='bg-neutral-bg h-full relative'>
       <Filter />
       <header className='bg-primary'>
         <Image

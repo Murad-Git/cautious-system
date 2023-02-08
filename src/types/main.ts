@@ -2,6 +2,7 @@ import React from 'react';
 
 export interface Children {
   children: React.ReactNode | React.ReactNode[];
+  className?: string;
 }
 export interface Job {
   id: number;

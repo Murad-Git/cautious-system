@@ -11,11 +11,11 @@ export const JobFilter = ({ role, level, languages }: Job) => {
   //   { type: 'level', tag: level },
   //   { type: 'languages', tag: languages },
   // ];
-  const tagList = [role, level === 'Midweight' ? 'Mid' : level, ...languages];
+  const tagList = [role, level, ...languages];
   const dispatch = useAppDispatch();
 
   return (
-    <div>
+    <div className='mt-8 md:mt-auto'>
       {tagList.map((tagItem, index) => (
         <Button
           onClick={() => dispatch(addFilterJobs(tagItem))}

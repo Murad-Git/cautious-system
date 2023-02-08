@@ -34,21 +34,20 @@ export const jobsSlice = createSlice({
       state.filterKeys = [...state.filterKeys, payload];
 
       state.filteredJob = state.initial.filter((job) => {
-        job.languages.some((lang) => state.filterKeys.includes(lang) && job);
-        if (
-          state.filterKeys.includes(job.role) ||
-          state.filterKeys.includes(job.level)
-        )
-          return job;
-        else return;
+        const skills = [job.role, job.level, ...job.languages, ...job.tools];
+
+        return state.filterKeys.every((filter) => skills.includes(filter));
       });
     },
     removeFilterJobs(state: State, { payload }: PayloadAction<string>) {
       state.filterKeys = state.filterKeys.filter((keys) => keys !== payload);
-      state.filteredJob = state.filteredJob.filter((job) => {
-        if (job.role == payload || job.level == payload) return;
-        else return job;
+      state.filteredJob = state.initial.filter((job) => {
+        const skills = [job.role, job.level, ...job.languages, ...job.tools];
+
+        return state.filterKeys.every((filter) => skills.includes(filter));
       });
+
+      state.filteredJob.length === 0 ? (state.filteredJob = state.initial) : '';
     },
     removeAllFilters(state) {
       state.filterKeys = [];
