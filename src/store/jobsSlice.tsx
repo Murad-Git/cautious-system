@@ -10,7 +10,7 @@ import { Job } from '@/types/main';
 type State = {
   initial: Job[];
   filteredJob: Job[] | [];
-  filterKeys: string[] | [];
+  filterKeys: string[];
 };
 
 const initialState: State = {
